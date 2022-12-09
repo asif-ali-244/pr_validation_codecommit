@@ -1,8 +1,9 @@
 {
   "name": "PR_Validation_CodeCommit",
+  "description": "AWS Construct to create resources for PR Validation and review",
   "repository": {
     "type": "git",
-    "url": "https://github.com/asifrajar244/PR_Validation_CodeCommit.git"
+    "url": "https://github.com/asif-ali-244/PR_Validation_CodeCommit.git"
   },
   "scripts": {
     "build": "npx projen build",
@@ -38,7 +39,7 @@
     "@types/node": "^14",
     "@typescript-eslint/eslint-plugin": "^5",
     "@typescript-eslint/parser": "^5",
-    "aws-cdk-lib": "2.1.0",
+    "aws-cdk-lib": "2.53.0",
     "constructs": "10.0.5",
     "eslint": "^8",
     "eslint-import-resolver-node": "^0.3.6",
@@ -58,10 +59,14 @@
     "typescript": "^4.9.4"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.1.0",
+    "aws-cdk-lib": "^2.53.0",
     "constructs": "^10.0.5"
   },
   "keywords": [
+    "CDK",
+    "Code Commit",
+    "PR Validation",
+    "Pull Requests",
     "cdk"
   ],
   "main": "lib/index.js",
@@ -108,7 +113,7 @@
     }
   },
   "types": "lib/index.d.ts",
-  "stability": "stable",
+  "stability": "",
   "jsii": {
     "outdir": "dist",
     "targets": {},
