@@ -117,7 +117,7 @@ const codeCommitPrValidationProps: CodeCommitPrValidationProps = { ... }
 
 | **Name** | **Type** | **Description** |
 | --- | --- | --- |
-| <code><a href="#PR_Validation_CodeCommit.CodeCommitPrValidationProps.property.config">config</a></code> | <code><a href="#PR_Validation_CodeCommit.ConfigProps">ConfigProps</a>[]</code> | List of {@link ConfigProps}. |
+| <code><a href="#PR_Validation_CodeCommit.CodeCommitPrValidationProps.property.config">config</a></code> | <code><a href="#PR_Validation_CodeCommit.ConfigProps">ConfigProps</a>[]</code> | *No description.* |
 
 ---
 
@@ -128,8 +128,6 @@ public readonly config: ConfigProps[];
 ```
 
 - *Type:* <a href="#PR_Validation_CodeCommit.ConfigProps">ConfigProps</a>[]
-
-List of {@link ConfigProps}.
 
 ---
 
