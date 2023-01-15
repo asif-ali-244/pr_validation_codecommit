@@ -1,5 +1,5 @@
 {
-  "name": "PR_Validation_CodeCommit",
+  "name": "pr_validation_codecommit",
   "description": "AWS Construct to create resources for PR Validation and review",
   "repository": {
     "type": "git",
