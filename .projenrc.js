@@ -4,8 +4,8 @@ const project = new awscdk.AwsCdkConstructLibrary({
   authorAddress: 'asifrajar244@gmail.com',
   cdkVersion: '2.53.0',
   defaultReleaseBranch: 'main',
-  name: 'PR_Validation_CodeCommit',
-  repositoryUrl: 'https://github.com/asif-ali-244/PR_Validation_CodeCommit.git',
+  name: 'pr_validation_codecommit',
+  repositoryUrl: 'https://github.com/asif-ali-244/pr_validation_codecommit.git',
   keywords: [
     'CDK',
     'Code Commit',
