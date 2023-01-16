@@ -10,7 +10,7 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 
-export interface ConfigProps {
+interface ConfigProps {
   /**
    * Repository Name
    */
@@ -21,7 +21,7 @@ export interface ConfigProps {
   readonly projectConfig?: ProjectProps;
 }
 
-export interface CodeCommitPrValidationProps {
+interface CodeCommitPrValidationProps {
   readonly config: ConfigProps[];
 }
 
@@ -54,7 +54,7 @@ export class CodeCommitPrValidation extends Construct {
     });
 
     const approvePrLambda = new Function(this, 'approve-pr-lambda', {
-      code: Code.fromAsset(path.join(__dirname, 'lambdas/approve_pr_lambda')),
+      code: Code.fromAsset(path.join(__dirname, 'lambdas','approve_pr_lambda')),
       functionName: 'approve-pr-lambda',
       handler: 'index.handler',
       runtime: Runtime.PYTHON_3_9,
@@ -73,7 +73,7 @@ export class CodeCommitPrValidation extends Construct {
     );
 
     const buildTriggerLambda = new Function(this, 'trigger-build-lambda', {
-      code: Code.fromAsset(path.join(__dirname, 'lambdas/trigger_build_lambda')),
+      code: Code.fromAsset(path.join(__dirname, 'lambdas','trigger_build_lambda')),
       functionName: 'trigger-build-lambda',
       environment: {
         BUILD_MAP_PARAMETER_NAME: ssmParameter.parameterName,
