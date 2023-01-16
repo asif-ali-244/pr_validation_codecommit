@@ -10,7 +10,7 @@ import { RetentionDays } from 'aws-cdk-lib/aws-logs';
 import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 import { Construct } from 'constructs';
 
-interface ConfigProps {
+export interface ConfigProps {
   /**
    * Repository Name
    */
