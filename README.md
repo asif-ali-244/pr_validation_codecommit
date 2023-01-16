@@ -68,6 +68,8 @@ export class PullRequestValidationStack extends Stack {
 }
 ```
 
+Now when you create a PR it will trigger a codebuild project that would validate your PR. If the validation build passes, the PR will be approved and can be merged using the merge option on the PR. You can also watch the status of the validation build in the **`Activity`** tab of the PR.
+
 ## API Reference
 
 See [API.md](https://github.com/asif-ali-244/pr_validation_codecommit/blob/main/API.md)
