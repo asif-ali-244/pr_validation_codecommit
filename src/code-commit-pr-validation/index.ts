@@ -1,3 +1,4 @@
+import * as path from 'path';
 import { Project, ProjectProps, Source } from 'aws-cdk-lib/aws-codebuild';
 import { IRepository, Repository } from 'aws-cdk-lib/aws-codecommit';
 import { Rule } from 'aws-cdk-lib/aws-events';
@@ -5,6 +6,11 @@ import { LambdaFunction } from 'aws-cdk-lib/aws-events-targets';
 import { Construct } from 'constructs';
 import { ApprovePRLambdaFunction } from './approve_pr_lambda';
 import { TriggerBuildLambdaFunction } from './trigger_build_lambda';
+
+
+export const approvePrLambdaDir = path.join(__dirname, 'lambdas', 'approve_pr_lambda');
+
+export const triggerBuildLambdaDir = path.join(__dirname, 'lambdas', 'trigger_build_lambda');
 
 export interface ConfigProps {
   /**
