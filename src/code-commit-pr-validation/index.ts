@@ -21,7 +21,7 @@ interface ConfigProps {
   readonly projectConfig?: ProjectProps;
 }
 
-interface CodeCommitPrValidationProps {
+export interface CodeCommitPrValidationProps {
   readonly config: ConfigProps[];
 }
 
