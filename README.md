@@ -4,8 +4,8 @@ Pull request validation is a part of CI pipeline that will be run whenever the P
 
 Code Commit natively doesn’t support running validation tests on creation of a pull request, we can however trigger a lambda function that can run a code build project that will behave as our validation build. The pull request status can then be updated according to the validation build, we can approve and safely merge the PR if the build passed.
 
-
 ## Install
+
 Typescript/JavaScript:
 
 ```bash
