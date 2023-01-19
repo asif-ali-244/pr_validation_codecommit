@@ -122,10 +122,7 @@
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
-    },
-    "excludeTypescript": [
-      "src/code-commit-pr-validation/lambdas/**"
-    ]
+    }
   },
   "resolutions": {
     "@types/prettier": "2.6.0",

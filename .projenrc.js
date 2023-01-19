@@ -23,7 +23,7 @@ const project = new awscdk.AwsCdkConstructLibrary({
     'aws-sdk',
   ], /* Build dependencies for this module. */
   // packageName: undefined,  /* The "name" in package.json. */
-  excludeTypescript: ['src/code-commit-pr-validation/lambdas/**'],
+//   excludeTypescript: ['src/code-commit-pr-validation/lambdas/**'],
 });
 
 project.eslint.overrides.push({
