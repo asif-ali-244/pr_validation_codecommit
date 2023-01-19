@@ -120,13 +120,13 @@ const addApproverToPr = async (pullRequestId: string, accountId: string): Promis
 
   try {
     const params: any = {
-      approvalRuleContent: approval_rule_content,
+      approvalRuleContent: JSON.stringify(approval_rule_content),
       approvalRuleName: 'pr-approval',
       pullRequestId,
     };
     await codeCommit.createPullRequestApprovalRule(params).promise();
   } catch (error) {
-    if (error.message === 'ApprovalRuleNameAlreadyExistsException') {
+    if (error.code === 'ApprovalRuleNameAlreadyExistsException') {
       console.log('Rule Already Exist');
     } else {
       console.error(error);
@@ -187,7 +187,7 @@ export const handler = async (event: EventBridgeEvent<string, any>): Promise<voi
 
 
   } catch (err) {
-    console.error('Error in <NotificationStepFunction.sendReminder>', err);
+    console.error(err);
     throw err;
   }
 };

@@ -97,7 +97,7 @@ export const handler = async (event: EventBridgeEvent<string, CodeBuildStateEven
     await approvePR(buildStatus, revisionId, pullRequestId);
 
   } catch (err) {
-    console.error('Error in <NotificationStepFunction.sendReminder>', err);
+    console.error(err);
     throw err;
   }
 };
