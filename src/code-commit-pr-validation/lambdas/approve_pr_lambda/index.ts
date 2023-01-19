@@ -24,7 +24,7 @@ const approvePR = async (buildStatus: string, revisionId: string, pullRequestId:
         revisionId,
         approvalState: 'APPROVE',
       };
-      codeCommit.updatePullRequestApprovalState(params);
+      await codeCommit.updatePullRequestApprovalState(params).promise();
     } catch (error) {
       console.error(error);
       throw error;
@@ -32,9 +32,9 @@ const approvePR = async (buildStatus: string, revisionId: string, pullRequestId:
   }
 };
 
-const commentCodeBuildResultOnPR = async (params: CodeCommit.Types.PostCommentForPullRequestInput) => {
+const commentCodeBuildResultOnPR = async (params: CodeCommit.Types.PostCommentForPullRequestInput): Promise<void> => {
   try {
-    codeCommit.postCommentForPullRequest(params);
+    await codeCommit.postCommentForPullRequest(params).promise();
   } catch (error) {
     console.error(error);
     throw error;

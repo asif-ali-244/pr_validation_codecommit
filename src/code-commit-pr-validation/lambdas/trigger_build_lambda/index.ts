@@ -94,7 +94,7 @@ const postBuildStartedCommentOnPR = async (params: PostPRCommentParameters) => {
       afterCommitId: params.destinationCommit,
       content: `Build for Validating Pull Request has been started. Check [CodeBuild Logs](${logLink})`,
     };
-    codeCommit.postCommentForPullRequest(input);
+    await codeCommit.postCommentForPullRequest(input).promise();
   } catch (error) {
     console.error(error);
     throw error;
@@ -124,7 +124,7 @@ const addApproverToPr = async (pullRequestId: string, accountId: string): Promis
       approvalRuleName: 'pr-approval',
       pullRequestId,
     };
-    codeCommit.createPullRequestApprovalRule(params);
+    await codeCommit.createPullRequestApprovalRule(params).promise();
   } catch (error) {
     if (error.message === 'ApprovalRuleNameAlreadyExistsException') {
       console.log('Rule Already Exist');
