@@ -32,7 +32,7 @@ export class ApprovePRLambdaFunction extends Construct {
       code: Code.fromAsset(path.join(__dirname, 'lambdas', 'approve_pr_lambda')),
       functionName: 'approve-pr-lambda',
       handler: 'index.handler',
-      runtime: Runtime.PYTHON_3_9,
+      runtime: Runtime.NODEJS_16_X,
       logRetention: RetentionDays.ONE_WEEK,
       timeout: props.timeout ?? Duration.minutes(15),
     });

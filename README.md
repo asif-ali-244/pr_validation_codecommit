@@ -70,6 +70,41 @@ export class PullRequestValidationStack extends Stack {
 
 Now when you create a PR it will trigger a codebuild project that would validate your PR. If the validation build passes, the PR will be approved and can be merged using the merge option on the PR. You can also watch the status of the validation build in the **`Activity`** tab of the PR.
 
+You can also create PR validation builds for multiple repositories:
+
+```typescript
+import { BuildSpec } from "aws-cdk-lib/aws-codebuild";
+import { Stack, StackProps } from "aws-cdk-lib";
+import { Construct } from "constructs";
+import * as pr from 'pr_validation_codecommit'
+
+export class PullRequestValidationStack extends Stack {
+    constructor(scope: Construct, id: string, props: StackProps) {
+        super(scope, id)
+
+        const angularValidationBuildSpec = // angular validation buildSpec
+        const backendValidationBuildSpec = // backend validation buildSpec
+
+        new pr.CodeCommitPrValidation(this, 'pr-validation',{
+            config: [
+                {
+                    repoName: 'angular-app-repo',
+                    projectConfig: {
+                        buildSpec: BuildSpec.fromObject(angularValidationBuildSpec)
+                    }
+                },
+                {
+                    repoName: 'backend-app-repo',
+                    projectConfig: {
+                        buildSpec: BuildSpec.fromObject(backendValidationBuildSpec)
+                    }
+                }
+            ]
+        })
+    }
+}
+```
+
 ## API Reference
 
 See [API.md](https://github.com/asif-ali-244/pr_validation_codecommit/blob/main/API.md)

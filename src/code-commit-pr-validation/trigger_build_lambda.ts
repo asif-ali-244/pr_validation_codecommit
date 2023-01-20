@@ -51,7 +51,7 @@ export class TriggerBuildLambdaFunction extends Construct {
         APPROVER: `${props.approvePrLambda.role?.roleName}/${props.approvePrLambda.functionName}`,
       },
       handler: 'index.handler',
-      runtime: Runtime.NODEJS_18_X,
+      runtime: Runtime.NODEJS_16_X,
       logRetention: RetentionDays.ONE_WEEK,
       timeout: props.timeout ?? Duration.minutes(15),
     });
